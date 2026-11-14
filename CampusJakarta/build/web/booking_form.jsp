@@ -83,7 +83,7 @@
 <div class="container">
     <div class="header">
         <h2>Campus Facility Reservation</h2>
-        <p>Ajman University — Campus Operations</p>
+        <p>Ajman University - Campus Operations</p>
     </div>
 
     <form action="ReservationServlet" method="POST">
@@ -96,8 +96,8 @@
             <label for="userRole">University Role</label>
             <select id="userRole" name="userRole" required>
                 <option value="" disabled selected>Select Role</option>
-                <option value="STUDENT">STUDENT — Standard Rate</option>
-                <option value="FACULTY">FACULTY — 15% Discount</option>
+                <option value="STUDENT">STUDENT - No discount applied</option>
+                <option value="FACULTY">FACULTY - 15% discount applied</option>
             </select>
         </div>
 
@@ -105,9 +105,9 @@
             <label for="itemCategory">Equipment Category</label>
             <select id="itemCategory" name="itemCategory" required>
                 <option value="" disabled selected>Select Equipment</option>
-                <option value="LAPTOP">LAPTOP — 50 AED per day</option>
-                <option value="PROJECTOR">PROJECTOR — 80 AED per day</option>
-                <option value="POD">STUDY POD — 100 AED per day</option>
+                <option value="LAPTOP">LAPTOP - 50 AED per day</option>
+                <option value="PROJECTOR">PROJECTOR - 80 AED per day</option>
+                <option value="POD">STUDY POD - 100 AED per day</option>
             </select>
         </div>
 

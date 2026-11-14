@@ -72,20 +72,31 @@
 
 <div class="container">
     <h2>Official Receipt</h2>
-    
-    <div class="row"><span>Name:</span> <span>${userName}</span></div>
-    <div class="row"><span>Role:</span> <span>${userRole}</span></div>
-    <div class="row"><span>Item:</span> <span>${itemCategory}</span></div>
-    <div class="row"><span>Quantity:</span> <span>${quantity}</span></div>
-    <div class="row"><span>Duration:</span> <span>${bookingDays} Days</span></div>
-    <div class="row"><span>Daily Rate:</span> <span>${dailyRate} AED</span></div>
+    <%
+    // Declare vars and from the req object
+        String customerName = (String) request.getAttribute("userName");
+        String role = (String) request.getAttribute("userRole");
+        String item = (String) request.getAttribute("itemCategory");
+        Integer qty = (Integer) request.getAttribute("quantity");
+        Integer days = (Integer) request.getAttribute("bookingDays");
+        Double rate = (Double) request.getAttribute("dailyRate");
+        Double sub = (Double) request.getAttribute("subtotal");
+        Double discount = (Double) request.getAttribute("discountAmount");
+        Double net = (Double) request.getAttribute("netTotal");
+    %>
+    <div class="row"><span>Name:</span> <span><%= customerName %></span></div>
+    <div class="row"><span>Role:</span> <span><%= role %></span></div>
+    <div class="row"><span>Item:</span> <span><%= item %></span></div>
+    <div class="row"><span>Quantity:</span> <span><%= qty %></span></div>
+    <div class="row"><span>Duration:</span> <span><%= days %> Days</span></div>
+    <div class="row"><span>Daily Rate:</span> <span><%= rate %> AED</span></div>
     
     <br>
     
-    <div class="row"><span>Subtotal:</span> <span>${subtotal} AED</span></div>
-    <div class="row"><span>Discount Applied:</span> <span>-${discountAmount} AED</span></div>
+    <div class="row"><span>Subtotal:</span> <span><%= sub %> AED</span></div>
+    <div class="row"><span>Discount Applied:</span> <span>-<%= discount %> AED</span></div>
     
-    <div class="total-row"><span>Net Total:</span> <span>${netTotal} AED</span></div>
+    <div class="total-row"><span>Net Total:</span> <span><%= net %> AED</span></div>
 
     <a href="booking_form.jsp" class="btn-back">Make Another Reservation</a>
 </div>
