@@ -24,32 +24,18 @@ In NetBeans, go to the Services tab on the left side.
 
 Expand the Databases folder, right-click Java DB, and select Start Server.
 
-Right-click Java DB again and click Create Database. Name the database test (set both username and password to app).
+Right-click Java DB again and click Create Database. Name the database "campus_facility_db".
 
 Once created, right-click the new test database connection and select Connect.
 
-Right-click the connection again and choose Execute Command.
+Next open the files tab beside services and expand the project file.
 
-Copy and paste the following SQL code into the window and run it to create the required table:
+You will find a folder called SQL, expand that folder and open both files called "data.sql" and "schema.sql".
 
-CREATE TABLE reservations (
-    id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    user_name VARCHAR(100),
-    user_role VARCHAR(50),
-    item_category VARCHAR(50),
-    quantity INT,
-    booking_days INT,
-    daily_rate DECIMAL(10,2),
-    subtotal DECIMAL(10,2),
-    net_total DECIMAL(10,2)
-);
+Open the schema.sql file and run the command making sure you are connected to the database which should appear on the bar on the top of the page.
 
+The database table should now be created and ready to run, you also have the data.sql file with sample SQL code to test out.
 
 Step 4: Run the Application
 
-Go back to the Projects tab, right-click the project, and click Clean and Build.
-
-Right-click the project again and click Run.
-
-Open your web browser and go to the following URL to access the form:
-http://localhost:8080/CampusJakarta/booking_form.jsp
+Go back to the Projects tab and just click on the green run button.
